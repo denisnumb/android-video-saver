@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="channel"
+            type="denisnumb.video_saver.model.user_data_objects.Channel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_channel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/rv_element_height"
+        android:layout_margin="5dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{channel.title}"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:lines="1"
+            android:textSize="@dimen/rv_element_text_size"
+            android:textColor="@color/main_color"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_video_folders">
+
+    <fragment
+        android:id="@+id/navigation_channels"
+        android:name="denisnumb.video_saver.ui.channels.ChannelsFragment"
+        android:label="@string/title_channels"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_navigation_channels_to_view_channel"
+            app:destination="@id/navigation_view_channel"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_video_folders"
+        android:name="denisnumb.video_saver.ui.videos.VideoFoldersFragment"
+        android:label="@string/title_videos"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_navigation_videosFolder_to_videos"
+            app:destination="@id/navigation_videos"/>
+
+        <action
+            android:id="@+id/action_navigation_videosFolder_to_downloaded_videos"
+            app:destination="@id/navigation_downloaded_videos"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="denisnumb.video_saver.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_navigation_search_to_search_history"
+            app:destination="@id/navigation_search_history"/>
+
+        <action
+            android:id="@+id/action_navigation_search_to_view_channel"
+            app:destination="@id/navigation_view_channel"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search_history"
+        android:name="denisnumb.video_saver.ui.search.SearchHistoryFragment"
+        android:label="@string/search_history"
+        tools:layout="@layout/fragment_list"/>
+
+    <fragment
+        android:id="@+id/navigation_view_channel"
+        android:name="denisnumb.video_saver.ui.view_channel.ViewChannelFragment"
+        android:label="@string/title_view_channel"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="denisnumb.video_saver.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings"/>
+
+    <fragment
+        android:id="@+id/navigation_videos"
+        android:name="denisnumb.video_saver.ui.videos.VideosFragment"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_navigation_videos_to_view_channel"
+            app:destination="@id/navigation_view_channel"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_downloaded_videos"
+        android:name="denisnumb.video_saver.ui.videos.DownloadedVideosFragment"
+        tools:layout="@layout/fragment_list">
+    </fragment>
+
+</navigation>

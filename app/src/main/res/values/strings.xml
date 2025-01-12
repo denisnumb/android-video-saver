@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">VideoSaver</string>
+    <string name="title_channels">Каналы</string>
+    <string name="title_videos">Видео</string>
+    <string name="title_search">Поиск</string>
+    <string name="title_view_channel">Канал</string>
+    <string name="title_settings">Настройки</string>
+    <string name="title_downloaded_videos">Скачанные видео</string>
+    <string name="add">Добавить</string>
+    <string name="remove">Удалить</string>
+    <string name="open">Открыть</string>
+    <string name="back">Назад</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="saved">Сохранено</string>
+    <string name="copied">Ссылка скопирована в буфер обмена</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+    <string name="empty_fragment">Здесь ничего нет ¯\\_(ツ)_/¯</string>
+    <string name="getting_src">Получение ссылки…</string>
+
+    <string name="loading_canceled">Загрузка отменена</string>
+    <string name="video_data_getting_error_code">Ошибка (%1$s) при получении информации о видео</string>
+    <string name="video_data_getting_error_string">Ошибка при получении информации о видео: %1$s</string>
+    <string name="video_not_found_404">Видео не найдено</string>
+    <string name="unavailible_video">Видео недоступно в вашей стране. Используйте VPN.</string>
+    <string name="open_url_error">Ошибка при открытии ссылки \"%1$s\": %2$s</string>
+    <string name="file_create_error">Не удалось создать файл видео. Возможно выбранная папка загрузки более недоступна.</string>
+    <string name="file_not_found">Файл не найден</string>
+
+    <string name="save_data_req_error">Не удалось сохранить данные!
+        Возможно указана некорректная ссылка или токен доступа.
+        Убедитесь, что токен предоставляет право на изменение файлов репозитория.\n\n%1$s</string>
+
+    <string name="save_data_error">Не удалось сохранить данные!
+        Возможно указана некорректная ссылка или токен доступа.
+        Убедитесь, что токен предоставляет право на изменение файлов репозитория.\n\nКод ошибки: %1$d\n\n%2$s</string>
+
+    <string name="get_data_req_error">Не удалось получить данные!
+        Возможно указана некорректная ссылка или токен доступа.\n\n%1$s</string>
+
+    <string name="get_data_error">Не удалось получить данные!
+        Возможно указана некорректная ссылка или токен доступа.
+        \n\nКод ошибки: %1$d\n\n%2$s</string>
+
+    <string name="error_reading_github_file">Ошибка при попытке прочтения файла.
+        Убедитесь, что в настройках указана корректная ссылка на файл!</string>
+
+    <string name="error_parsing_github_file">Указанный файл %1$s имеет неправильную структуру для хранения ссылок.
+        Сбросить данные и перезаписать файл?</string>
+
+    <string name="error_downloading_video">Ошибка при скачивании видео "%1$s": %2$s</string>
+
+    <string name="enter_name">Введите название</string>
+    <string name="enter_url">Введите ссылку</string>
+
+    <string name="merge_local_with_cloud">Объединять локальные данные с данными из облака</string>
+    <string name="cloud_storage">Используйте GitHub в качестве облачного хранилища</string>
+    <string name="enter_user_data_file_url">URL-Адрес файла со ссылками</string>
+    <string name="user_data_file_requirements">Файл со ссылками должен распологаться в публичном или приватном репозитории на GitHub</string>
+    <string name="enter_github_token">Токен-доступа к GitHub</string>
+    <string name="token_requirements">Токен доступа необходим для удаления или добавления новых ссылок. Токен должен предоставлять право на изменение файлов в репозитории.</string>
+    <string name="choice_quality">Качество видео по исходной ссылке</string>
+    <string name="req_count">Количество одновременных запросов</string>
+    <string name="req_count_long">Количество видео, подгружаемых при поиске за один цикл</string>
+    <string name="max_video_count">Количество видео</string>
+    <string name="max_video_count_long">Максимальное количество видео при поиске</string>
+    <string name="yt_dlp_version">Версия yt-dlp: %1$s</string>
+    <string name="clear_loaded_video_cache">Очистить кэш видео</string>
+    <string name="downloads_dir_not_selected">Папка для загрузок не выбрана</string>
+    <string name="downloads_dir">Папка загрузки [%1$s]</string>
+    <string name="cache_clear_confirm">Вы уверены, что хотите очистить кэш видео? После очистки видео придется загрузить снова.</string>
+    <string name="clear_channels_cache">Удалить из кэша данные каналов?</string>
+    <string name="quality_string">%1$dp</string>
+
+    <string name="invalid_url">Ссылка на файл имеет неправильный формат</string>
+    <string name="no_token_info">Без токена доступа вы не сможете удалять и сохранять ссылки</string>
+    <string name="require_user_data_file_url">Укажите в настройках ссылку на файл для хранения данных</string>
+    <string name="require_github_token">Для изменения данных укажите в настройках токен доступа</string>
+    <string name="github_file_is_null">Файл \"%1$s\" по указанной ссылке недоступен</string>
+    <string name="local_data_loaded">Загружены локальные данные</string>
+    <string name="data_is_synchronized">Локальные данные синхронизированы с облаком</string>
+
+    <string name="new_channel">Новый канал</string>
+    <string name="new_video_folder">Новая папка</string>
+    <string name="new_video">Новое видео</string>
+    <string name="new_url">Новая ссылка</string>
+    <string name="url_to">Ссылка [%1$s]</string>
+    
+    <string name="channel_already_exists">Такой канал уже есть в списке</string>
+    <string name="folder_already_exists">Папка с таким названием уже есть в списке</string>
+    <string name="video_already_exists">Такое видео уже есть в списке</string>
+
+    <string name="remove_item">Удалить пункт</string>
+    <string name="copy_url">Скопировать ссылку</string>
+    <string name="edit_url">Изменить ссылку</string>
+    <string name="remove_from_cache">Удалить из кеша</string>
+    <string name="open_in_browser">Открыть в браузере</string>
+    <string name="save_video">Сохранить видео</string>
+    <string name="download_video">Скачать видео</string>
+    <string name="delete_downloaded_video">Удалить с устройства</string>
+    <string name="cancel_downloadind">Отменить скачивание</string>
+
+    <string name="removed_from_cache">Ссылка удалена из кеша</string>
+    <string name="cache_dropped">Кэш поиска очищен</string>
+
+    <string name="enter_query_or_url">Введите запрос</string>
+    <string name="start_search">Начать поиск</string>
+    <string name="start_loading">Начать загрузку</string>
+    <string name="stop_search">Остановить поиск</string>
+    <string name="stop_loading">Остановить загрузку</string>
+    <string name="progress">%1$d/%2$d</string>
+    <string name="video_loading">Загрузка видео</string>
+    <string name="empty_fragment_loaded_videos">Не удалось загрузить видео ¯\\_(ツ)_/¯</string>
+    <string name="remove_query_from_cache">Удалить этот запрос из кэша</string>
+    <string name="remove_channel_from_cache">Удалить этот канал из кэша</string>
+    <string name="query_removed_from_cache">Видео, найденные по данному запросу, удалены из кэша</string>
+    <string name="channel_removed_from_cache">Канал удален из кэша</string>
+    <string name="clear_search_history">Очистить историю запросов</string>
+    <string name="max_video_count_already_loaded">Уже загружено максимальное количество видео</string>
+    <string name="no_other_videos">Другие видео не найдены</string>
+    <string name="video_is_loading">Видео загружается</string>
+    <string name="search_history">История запросов</string>
+    <string name="open_channel">Открыть канал</string>
+    <string name="save_channel">Сохранить канал</string>
+
+    <string name="saving_video">Сохранение видео</string>
+    <string name="choose_folder">Выберите папку</string>
+    <string name="save_to_this_folder">Сохранить в эту папку</string>
+    <string name="create_folder">Создать папку</string>
+</resources>

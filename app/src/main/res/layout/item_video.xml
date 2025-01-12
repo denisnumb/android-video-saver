@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="video"
+            type="denisnumb.video_saver.model.FullVideoData" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_video"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_margin="5dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                videoPreview="@{video.thumbnailUrl}"
+                android:scaleType="centerCrop"/>
+
+            <FrameLayout
+                android:id="@+id/layout_status"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right|top"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/shape_video_data_background"/>
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/pb_loading"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    app:trackThickness="2.5dp"
+                    app:indicatorSize="24dp"
+                    app:indicatorColor="@color/main_color"
+                    app:trackColor="@color/transparent"/>
+
+                <ImageView
+                    android:id="@+id/iv_src_url_availible"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_check_mark"/>
+
+                <ImageView
+                    android:id="@+id/iv_downloaded"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    android:src="@drawable/ic_downloaded"/>
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="left|bottom"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="50dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/shape_video_data_background"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textColor="@color/main_color"
+                    android:text='@{video.duration ?? "00:00"}'
+                    android:textSize="18sp"
+                    android:layout_marginHorizontal="5dp"
+                    tools:text="25:30"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/shape_video_data_background"/>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@{video.title}"
+                    android:layout_margin="5dp"
+                    android:ellipsize="marquee"
+                    android:singleLine="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:lines="1"
+                    android:textColor="@color/main_color"
+                    tools:text="Video Title"/>
+
+
+            </FrameLayout>
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

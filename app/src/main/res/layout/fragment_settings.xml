@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/cloud_storage"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/enter_user_data_file_url">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_user_data_file_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/user_data_file_requirements"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="@string/enter_github_token">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_guthub_token"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:password="true"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/token_requirements"/>
+
+        <CheckBox
+            android:id="@+id/cb_merge_local_user_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/merge_local_with_cloud"/>
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/save"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#7b7b7b"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="16dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:hint="@string/choice_quality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="16dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/dd_quality"
+                android:editable="false"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:hint="@string/req_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="16dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/dd_req_count"
+                android:editable="false"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/req_count_long"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:hint="@string/max_video_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="16dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/dd_video_count"
+                android:editable="false"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/max_video_count_long"/>
+
+        <Button
+            android:id="@+id/button_clear_cache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/clear_loaded_video_cache"/>
+
+        <Button
+            android:id="@+id/button_select_downloads_dir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/downloads_dir_not_selected"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#7b7b7b"
+            android:layout_marginHorizontal="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_yt_dlp_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/yt_dlp_version"/>
+
+    </LinearLayout>
+</ScrollView>

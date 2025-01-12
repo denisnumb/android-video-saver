@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.VideoSaver" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_color</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/main_color</item>
+        <item name="colorSecondaryVariant">@color/main_color</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+        <item name="android:navigationBarColor">@color/material_on_surface_stroke</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
