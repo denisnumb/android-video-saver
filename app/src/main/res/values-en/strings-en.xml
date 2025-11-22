@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">VideoSaver</string>
+    <string name="title_channels">Channels</string>
+    <string name="title_videos">Videos</string>
+    <string name="title_search">Search</string>
+    <string name="title_view_channel">Channel</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_downloaded_videos">Downloaded videos</string>
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
+    <string name="open">Open</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="saved">Saved</string>
+    <string name="copied">Link copied to clipboard</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="empty_fragment">Nothing here ¯\\_(ツ)_/¯</string>
+    <string name="getting_src">Getting a link…</string>
+
+    <string name="loading_canceled">Load canceled</string>
+    <string name="video_data_getting_error_code">Error (%1$s) while retrieving video information</string>
+    <string name="video_data_getting_error_string">Error getting video information: %1$s</string>
+    <string name="video_not_found_404">Video not found</string>
+    <string name="unavailible_video">Video not available in your country. Use a VPN.</string>
+    <string name="open_url_error">Error at the opening of the link \"%1$s\": %2$s</string>
+    <string name="file_create_error">Failed to create video file. The selected download folder may no longer be available.</string>
+    <string name="file_not_found">File not found</string>
+
+    <string name="save_data_req_error">Failed to save data!
+        An incorrect link or access token may have been specified.
+        Make sure the token grants permission to modify repository files.\n\n%1$s</string>
+
+    <string name="save_data_error">Failed to save data!
+        An incorrect link or access token may have been specified.
+        Make sure the token grants permission to modify repository files.\n\nError code: %1$d\n\n%2$s</string>
+
+    <string name="get_data_req_error">Failed to retrieve data!
+        An incorrect link or access token may have been specified.\n\n%1$s</string>
+
+    <string name="get_data_error">Failed to retrieve data!
+        An incorrect link or access token may have been specified.
+        \n\nError code: %1$d\n\n%2$s</string>
+
+    <string name="error_reading_github_file">An error occurred while trying to read the file.
+        Make sure that the correct link to the file is specified in the settings!</string>
+
+    <string name="error_parsing_github_file">The specified file %1$s has an incorrect structure for storing links.
+        Reset data and overwrite file?</string>
+
+    <string name="error_downloading_video">Error downloading video "%1$s": %2$s</string>
+
+    <string name="enter_name">Enter name</string>
+    <string name="enter_url">Enter link</string>
+
+    <string name="merge_local_with_cloud">Combine local data with data from the cloud</string>
+    <string name="cloud_storage">Use GitHub as your cloud storage</string>
+    <string name="enter_user_data_file_url">URL of file with links</string>
+    <string name="user_data_file_requirements">The file with links must be located in a public or private repository on GitHub</string>
+    <string name="enter_github_token">GitHub access token</string>
+    <string name="token_requirements">An access token is required to remove or add new links.  The token must provide the right to modify files in the repository.</string>
+    <string name="choice_quality">Video quality from source link</string>
+    <string name="req_count">Number of simultaneous requests</string>
+    <string name="req_count_long">Number of videos loaded during search in one cycle</string>
+    <string name="max_video_count">Number of videos</string>
+    <string name="max_video_count_long">Maximum number of videos per search</string>
+    <string name="yt_dlp_version">yt-dlp version: %1$s</string>
+    <string name="clear_loaded_video_cache">Clear video cache</string>
+    <string name="downloads_dir_not_selected">No download folder selected</string>
+    <string name="downloads_dir">Download folder [%1$s]</string>
+    <string name="cache_clear_confirm">Are you sure you want to clear the video cache? After cleaning, the video will have to be downloaded again.</string>
+    <string name="clear_channels_cache">Remove channel data from the cache?</string>
+    <string name="quality_string">%1$dp</string>
+
+    <string name="invalid_url">The file link is not in the correct format</string>
+    <string name="no_token_info">Without an access token, you will not be able to delete or save links</string>
+    <string name="require_user_data_file_url">Specify in the settings a link to the file for storing data</string>
+    <string name="require_github_token">To change data, specify an access token in the settings</string>
+    <string name="github_file_is_null">The file \"%1$s\" at the specified link is not available</string>
+    <string name="local_data_loaded">Local data loaded</string>
+    <string name="data_is_synchronized">Local data synchronized with the cloud</string>
+
+    <string name="new_channel">New channel</string>
+    <string name="new_video_folder">New folder</string>
+    <string name="new_video">New video</string>
+    <string name="new_url">New url</string>
+    <string name="url_to">Url [%1$s]</string>
+
+    <string name="channel_already_exists">This channel is already in the list</string>
+    <string name="folder_already_exists">A folder with the same name is already in the list</string>
+    <string name="video_already_exists">This video is already on the list</string>
+
+    <string name="remove_item">Remove item</string>
+    <string name="copy_url">Copy url</string>
+    <string name="edit_url">Change url</string>
+    <string name="remove_from_cache">Remove from cache</string>
+    <string name="open_in_browser">Open in browser</string>
+    <string name="save_video">Save video</string>
+    <string name="download_video">Download video</string>
+    <string name="delete_downloaded_video">Remove from device</string>
+    <string name="cancel_downloadind">Cancel downloading</string>
+
+    <string name="removed_from_cache">Link removed from cache</string>
+    <string name="cache_dropped">Search cache cleared</string>
+
+    <string name="enter_query_or_url">Enter your request</string>
+    <string name="start_search">Start Search</string>
+    <string name="start_loading">Start Loading</string>
+    <string name="stop_search">Stop Search</string>
+    <string name="stop_loading">Stop Loading</string>
+    <string name="progress">%1$d/%2$d</string>
+    <string name="video_loading">Video loading</string>
+    <string name="empty_fragment_loaded_videos">Failed to load video ¯\\_(ツ)_/¯</string>
+    <string name="remove_query_from_cache">Remove this query from cache</string>
+    <string name="remove_channel_from_cache">Remove channel from cache</string>
+    <string name="query_removed_from_cache">Videos found for this request have been removed from the cache</string>
+    <string name="channel_removed_from_cache">Channel has been removed from cache</string>
+    <string name="clear_search_history">Clear query history</string>
+    <string name="max_video_count_already_loaded">The maximum number of videos has already been downloaded</string>
+    <string name="no_other_videos">No other videos found</string>
+    <string name="video_is_loading">Video is loading</string>
+    <string name="search_history">Seach history</string>
+    <string name="open_channel">Open channel</string>
+    <string name="save_channel">Save channel</string>
+
+    <string name="saving_video">Saving video</string>
+    <string name="choose_folder">Choice folder</string>
+    <string name="save_to_this_folder">Save to this folder</string>
+    <string name="create_folder">Create folder</string>
+</resources>
