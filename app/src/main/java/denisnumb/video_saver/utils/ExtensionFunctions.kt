@@ -91,11 +91,9 @@ class ExtensionFunctions {
             }
         }
 
-        fun Fragment.openInVideoPlayer(url: String) = openInVideoPlayer(Uri.parse(url))
-
-        fun Fragment.openInVideoPlayer(uri: Uri?){
+        fun Context.openInVideoPlayer(uri: Uri?){
             if (uri == null)
-                return requireContext().showText(resources.getString(R.string.file_not_found))
+                return showText(resources.getString(R.string.file_not_found))
             try{
                 val intent = Intent(Intent.ACTION_VIEW).apply {
                     setDataAndType(uri,"video/mp4")
@@ -103,7 +101,7 @@ class ExtensionFunctions {
                 }
                 startActivity(intent)
             } catch (ex: Exception){
-                requireContext().showDialog(resources.getString(R.string.open_url_error, uri, ex.message))
+                showDialog(resources.getString(R.string.open_url_error, uri, ex.message))
             }
         }
 

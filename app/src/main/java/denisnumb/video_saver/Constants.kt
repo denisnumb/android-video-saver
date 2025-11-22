@@ -9,5 +9,6 @@ class Constants {
         const val SEARCH_QUERIES = "searchQueries"
         const val USER_DATA = "userData"
         const val DOWNLOADS_DIR = "downloadsDir"
+        const val SHARED_URL = "sharedUrl"
     }
 }

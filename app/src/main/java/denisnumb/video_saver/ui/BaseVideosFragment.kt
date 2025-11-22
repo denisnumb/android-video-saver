@@ -1,5 +1,6 @@
 package denisnumb.video_saver.ui
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import denisnumb.video_saver.R
@@ -164,13 +165,13 @@ abstract class BaseVideosFragment : Fragment(), ItemMenuFragment.ActionChoiceEve
         adapter.setOnItemClickListener(object : VideosAdapter.VideoClickHandler {
             override fun onClickEvent(video: FullVideoData) {
                 if (video.isDownloaded(viewModel.downloadedHashes))
-                    openInVideoPlayer(requireActivity().getDownloadedVideoFile(viewModel, video)?.uri)
+                    requireContext().openInVideoPlayer(requireActivity().getDownloadedVideoFile(viewModel, video)?.uri)
                 else if (video.isLoading)
                     requireContext().showText(resources.getString(R.string.video_is_loading))
                 else if (video.isSourceUrlLoading)
                     requireContext().showText(resources.getString(R.string.getting_src))
                 else if (video.sourceUrl != null)
-                    openInVideoPlayer(video.sourceUrl!!)
+                    requireContext().openInVideoPlayer(Uri.parse(video.sourceUrl!!))
                 else if (video.isLoaded)
                     loadVideo(video, true)
 

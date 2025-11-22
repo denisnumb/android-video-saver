@@ -1,5 +1,7 @@
 package denisnumb.video_saver
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -17,18 +19,28 @@ import com.yausername.youtubedl_android.YoutubeDLException
 import denisnumb.video_saver.Constants.Companion.CHANNELS_CACHE
 import denisnumb.video_saver.Constants.Companion.SEARCH_CACHE
 import denisnumb.video_saver.Constants.Companion.SEARCH_QUERIES
+import denisnumb.video_saver.Constants.Companion.SHARED_URL
 import denisnumb.video_saver.Constants.Companion.USER_SETTINGS
 import denisnumb.video_saver.databinding.ActivityMainBinding
 import denisnumb.video_saver.model.FullVideoData
 import denisnumb.video_saver.model.UserSettings
+import denisnumb.video_saver.model.VideoData
+import denisnumb.video_saver.model.responses.FullVideoDataResponse
+import denisnumb.video_saver.model.responses.Response
+import denisnumb.video_saver.model.responses.ResponseStatus
+import denisnumb.video_saver.utils.ExtensionFunctions.Companion.MD5
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.getDirectoryFilesList
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.getDownloadPath
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.isInternetAvailable
+import denisnumb.video_saver.utils.ExtensionFunctions.Companion.openInVideoPlayer
+import denisnumb.video_saver.utils.ExtensionFunctions.Companion.showDialog
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.showText
+import denisnumb.video_saver.utils.YdlRequestUtils
 import denisnumb.video_saver.utils.YdlRequestUtils.Companion.isSrcUrlAlive
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeout
 import java.util.concurrent.CountDownLatch
 
 
@@ -153,6 +165,15 @@ class MainActivity : AppCompatActivity() {
             if (menuItem.itemId == R.id.navigation_video_folders){
                 if (navController.currentDestination?.id == R.id.navigation_videos)
                     navController.popBackStack()
+            }
+        }
+
+        val url = intent.getStringExtra(SHARED_URL)
+        if (url != null) {
+            val videoData = VideoData(url, MD5(url))
+            val quality = viewModel.userSettings.videoQuality
+            YdlRequestUtils.getFullVideoData(videoData, quality).videoData?.sourceUrl?.let { sourceUrl ->
+                openInVideoPlayer(Uri.parse(sourceUrl))
             }
         }
     }

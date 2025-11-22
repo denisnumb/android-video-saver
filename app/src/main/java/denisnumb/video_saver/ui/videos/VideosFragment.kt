@@ -125,13 +125,20 @@ class VideosFragment : BaseVideosFragment(), AddOrEditItemFragment.AddNewItemCli
         if (mode == AddOrEditItemFragment.AddOrEdit.Add)
             viewModel.currentVideoFolder.value?.videos?.add(FullVideoData(title, url))
         else {
-            val video = viewModel.currentVideoFolder.value?.videos?.find { it.title == title }
-            video?.url = url
+            viewModel.currentVideoFolder.value?.let { folder ->
+                val updatedVideos = folder.videos.map { video ->
+                    if (video.title == title) video.copy(url = url) else video
+                }.toMutableList()
+
+                val updatedFolder = folder.copy(name = folder.name, videos = updatedVideos)
+                viewModel.setCurrentVideoFolder(updatedFolder)
+                viewModel.userData.videoFolders[folder.name] = updatedFolder
+            }
         }
 
         val commitSymbol = if (mode == AddOrEditItemFragment.AddOrEdit.Add) "+" else "E"
         requireContext().saveUserData(viewModel, "[$commitSymbol] Видео: $title")
-        updateData(1000)
+        updateData(3000)
 
         if (mode == AddOrEditItemFragment.AddOrEdit.Edit)
             requireContext().showText(resources.getString(R.string.saved))
