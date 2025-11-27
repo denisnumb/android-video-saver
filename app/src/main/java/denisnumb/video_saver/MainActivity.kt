@@ -4,9 +4,13 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -28,9 +32,12 @@ import denisnumb.video_saver.model.VideoData
 import denisnumb.video_saver.model.responses.FullVideoDataResponse
 import denisnumb.video_saver.model.responses.Response
 import denisnumb.video_saver.model.responses.ResponseStatus
+import denisnumb.video_saver.ui.shared_loading.SharedLoadingDialog
+import denisnumb.video_saver.ui.shared_loading.SharedLoadingViewModel
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.MD5
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.getDirectoryFilesList
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.getDownloadPath
+import denisnumb.video_saver.utils.ExtensionFunctions.Companion.handleResponseError
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.isInternetAvailable
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.openInVideoPlayer
 import denisnumb.video_saver.utils.ExtensionFunctions.Companion.showDialog
@@ -168,12 +175,32 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val url = intent.getStringExtra(SHARED_URL)
-        if (url != null) {
-            val videoData = VideoData(url, MD5(url))
-            val quality = viewModel.userSettings.videoQuality
-            YdlRequestUtils.getFullVideoData(videoData, quality).videoData?.sourceUrl?.let { sourceUrl ->
-                openInVideoPlayer(Uri.parse(sourceUrl))
+        intent.getStringExtra(SHARED_URL)?.let { sharedUrl ->
+            lifecycleScope.launch {
+                loadSharedUrl(sharedUrl)
+            }
+        }
+    }
+
+    private val sharedLoadingViewModel: SharedLoadingViewModel by viewModels()
+    private var loadingDialog: SharedLoadingDialog? = null
+
+    private fun loadSharedUrl(url: String) {
+        intent.removeExtra(SHARED_URL)
+        sharedLoadingViewModel.loadVideoByUrl(url, this, viewModel)
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                sharedLoadingViewModel.isLoading.collect { isLoading ->
+                    if (isLoading && loadingDialog == null) {
+                        loadingDialog = SharedLoadingDialog().also { dialog ->
+                            dialog.show(supportFragmentManager, "loading")
+                        }
+                    } else if (!isLoading) {
+                        loadingDialog?.dismiss()
+                        loadingDialog = null
+                    }
+                }
             }
         }
     }
